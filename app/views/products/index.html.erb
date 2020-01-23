@@ -1,0 +1,44 @@
+<h1>Products</h1>
+
+<div id="all-products">
+  <% if @products.any? %>
+    <form>
+      <div class="form-group">
+        <button class="btn btn-success" type="submit" name="a_to_z">A to Z <i class="fas fa-sort-alpha-down"></i>
+        </button>
+        <button class="btn btn-primary" type="submit" name="z_to_a">Z to A <i class="fas fa-sort-alpha-down-alt"></i></button>
+        <div class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort <i class="fas fa-filter"></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="btn btn-primary" type="submit" name="made_in_usa">Made In USA</button>
+            <br>
+            <br>
+            <button class="btn btn-secondary" type="submit" name="recently_added">Most Recent</button>
+            <br>
+            <br>
+            <button class="btn btn-success" type="submit" name="product_with_most_reviews">Most Reviewed Product</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <ul class="product-listing">
+      <% @products.each do |product| %>
+        <div class="product-view">
+          <li><h5><%= link_to product.name, product_path(product, class:"products-titles") %></h5></li>
+          <%= link_to image_tag("https://i.picsum.photos/id/39/3456/2304.jpg"), product_path(product), class: "placeholder-image" %>
+          <p class="product-description">Lorem ipsum product descripsum a deo inimum malac a marum ilum unde omnis iste natus error sit voluptatem accusantium doloremque laudantium...</p>
+          <p class="product-view-link"><%= link_to "View Details", product_path(product) %></p>
+        </div>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are no products yet.</p>
+  <% end %>
+</div>
+
+<div class="nav-links">
+  <p><%= link_to "Create new product", new_product_path %></p>
+  <p><%= link_to "View all products", products_path %></p>
+</div>

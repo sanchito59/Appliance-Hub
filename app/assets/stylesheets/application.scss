@@ -1,0 +1,143 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+// Access to FontAwesome
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$dark-background: rgb(22, 32, 41);
+$body-background: rgb(212, 214, 209);
+$blue-brand: rgb(5,114,185);
+$product-body-color: rgb(165, 167, 162);
+
+body {
+    background-color: $body-background;
+}
+
+#most-reviewed-home, #most-recent-home, #made-in-usa-home, #all-products, #individual-product-reviews {
+    background-color: $product-body-color;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    width: 900px;
+}
+
+// override bootstrap .row in a specific instance
+.margin-left-zero {
+    margin-left: 0px;
+}
+
+.nav-links {
+    background-color: $dark-background;
+    padding: 7.5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    width: 20%;
+}
+
+.nav-links p:hover {
+    font-style: italic;
+    font-weight: bold;
+}
+
+a {
+    color: white;
+}
+
+.product-view {
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 12px;
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+.products-titles a {
+    text-decoration: underline;
+    color: black;
+}
+
+.product-view a { 
+    color: $blue-brand;
+}
+
+.placeholder-image {
+    padding: 5px;
+    padding-bottom: 10px;
+}
+
+img {
+    border-radius: 8px;
+    padding: 5px;
+    width: 170px;
+    height: 200px;
+}
+
+.product-listing {
+    width: 75%;
+}
+
+// Products page
+.product-description {
+    width: 70%;
+}
+
+// Individual product review
+.product-review-text {
+    width: 40%;
+    margin-bottom: 12px;
+}
+
+.dropdown {
+    float: right;
+    width: 200px;
+}
+
+.dropdown-menu {
+    padding: 10px;
+    border: 2px solid $blue-brand;
+}
+
+.dropdownMenuButton {
+    width: 40px;
+}
+
+.form-size {
+    width: 300px;
+}
+
+.tall-text-area {
+    height: 200px;
+    width: 100%;
+}
+
+.form-size, .tall-text-area {
+    border-radius: 2px;
+    padding: 2px;
+}
+
+@include media-breakpoint-up(xs) { 
+    #most-reviewed-home, #most-recent-home, #made-in-usa-home, #all-products, #individual-product-reviews {
+        width: 60%;
+    }
+
+    .product-view {
+        width: 100%;
+    }
+ }

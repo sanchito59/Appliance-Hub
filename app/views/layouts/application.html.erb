@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Appliance Hub</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/products">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/products/new">Add Product </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "alert alert-success", role: "alert" %>
+  <% end %>
+  <div class="container-fluid">
+    <h1><strong>Appliance Hub</strong></h1>
+    <%= flash[:alert] %>
+    <%= yield %>
+  </div>
+</body>
+</html>

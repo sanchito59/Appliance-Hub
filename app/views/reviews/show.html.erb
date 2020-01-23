@@ -1,0 +1,22 @@
+<h1>Product: <%= @product.name %> </h1>
+<h2>Review by: <%= @review.author %> </h2>
+<% if @review.rating %>
+    <% x = 0 %>
+    <% stars = [] %>
+    <% until (x >= @review.rating) %>
+    <% x += 1 %>
+    <% stars.push('⭐️') %>
+    <% end %>
+    <p><%= stars.join(" ") %></p>
+    <% else %>
+    <p><%= "#{@product.name}" %> has not been rated yet.</p>
+<% end %>
+<h4 class="product-review-text"><%= @review.content_body %> </h4>
+<div class="nav-links">
+    <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
+    <p><%= link_to "Delete review", product_review_path(@product, @review),
+                            :data => {:confirm => "Are you sure?",
+                                        :method => "delete"} %></p>
+
+    <p><%= link_to "Return to product", product_path(@product) %></p>
+</div>
