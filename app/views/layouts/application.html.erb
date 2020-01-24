@@ -10,6 +10,11 @@
   </head>
 
 <body>
+<% if current_user %>
+  <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
+<% else %>
+  <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+<% end %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="/">Appliance Hub</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +41,10 @@
   <% end %>
   <div class="container-fluid">
     <h1><strong>Appliance Hub</strong></h1>
+
     <%= flash[:alert] %>
+    <%= flash[:notice] %>
+
     <%= yield %>
   </div>
 </body>
