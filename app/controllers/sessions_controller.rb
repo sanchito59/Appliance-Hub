@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
       if @user
         session[:user_id] = @user.id
         if current_user.admin === true
-          flash[:notice] = "Welcome, Admin"
+          flash[:notice] = "Welcome, Admin."
         else
           flash[:notice] = "You've signed in."
         end

@@ -24,9 +24,18 @@ $dark-background: rgb(22, 32, 41);
 $body-background: rgb(212, 214, 209);
 $blue-brand: rgb(5,114,185);
 $product-body-color: rgb(165, 167, 162);
+$nav-accent: rgb(67, 74, 80);
 
 body {
     background-color: $body-background;
+}
+
+#login-nav {
+    background-color: $nav-accent;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
 }
 
 #most-reviewed-home, #most-recent-home, #made-in-usa-home, #all-products, #individual-product-reviews {
