@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
-    # [:index] doesn't allow you to view products unless you are logged in
-    before_action :authorize, only: [:index]
+    before_action :authorize, only: [:index, :new, :create, :edit, :update, :destroy]
 
     # Code for listing all products
     def index
