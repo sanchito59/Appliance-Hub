@@ -24,25 +24,40 @@ class ProductsController < ApplicationController
     
     # Code for new product form
     def new
-        @product = Product.new
-        render :new
+        if current_user.admin != true
+            redirect_to '/'
+            flash[:notice] = "You do not have permission to do that."
+        else
+            @product = Product.new
+            render :new
+        end
     end
     
     # Code for creating a new product
     def create
-        @product = Product.new(product_params)
-        if @product.save
-            flash[:notice] = "#{@product.name} was successfully added!"
-            redirect_to products_path
+        if current_user.admin != true
+            redirect_to '/'
+            flash[:notice] = "You do not have permission to do that."
         else
-            render :new
+            @product = Product.new(product_params)
+            if @product.save
+                flash[:notice] = "#{@product.name} was successfully added!"
+                redirect_to products_path
+            else
+                render :new
+            end
         end
     end
     
     # Code for edit product form
     def edit
-        @product = Product.find(params[:id])
-        render :edit
+        if current_user.admin != true
+            redirect_to '/'
+            flash[:notice] = "You do not have permission to do that."
+        else
+            @product = Product.find(params[:id])
+            render :edit
+        end
     end
     
     # Code for showing a single product
@@ -51,23 +66,33 @@ class ProductsController < ApplicationController
         render :show
     end
     
-    # Code for updating an product
+    # Code for updating a product
     def update
-        @product = Product.find(params[:id])
-        if @product.update(product_params)
-            flash[:notice] = "#{@product.name} was successfully updated!"
-            redirect_to products_path
+        if current_user.admin != true
+            redirect_to '/'
+            flash[:notice] = "You do not have permission to do that."
         else
-            render :edit
+            @product = Product.find(params[:id])
+            if @product.update(product_params)
+                flash[:notice] = "#{@product.name} was successfully updated!"
+                redirect_to products_path
+            else
+                render :edit
+            end
         end
     end
     
-    # Code for deleting an product
+    # Code for deleting a product
     def destroy
-        @product = Product.find(params[:id])
-        @product.destroy
-        flash[:notice] = "Product was successfully deleted!"
-        redirect_to products_path
+        if current_user.admin != true
+            redirect_to '/'
+            flash[:notice] = "You do not have permission to do that."
+        else
+            @product = Product.find(params[:id])
+            @product.destroy
+            flash[:notice] = "Product was successfully deleted!"
+            redirect_to products_path
+        end
     end
 
     private

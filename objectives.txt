@@ -1,10 +1,6 @@
-- Does the project include working authentication?
+- Does the project include working authentication? (DONE)
 - Does the project include working authorization, including separate roles for users and admins?
 - Does the project include required CRUD functionality?
-- Were all objectives from last week met (see below)?
-- Is the application in a polished, portfolio-ready state?
-- Does the project demonstrate an understanding of this week's concepts? If prompted, are you able to discuss your code with an instructor using correct terminology?
-- Was all required functionality in place by the Friday deadline?
 
 User Stories:
 
