@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe 'the sign in for an admin account process' do
     it 'signs in an admin account' do
-        superuser = FactoryBot.create(:admin)
-        superuser.admin = true
+        admin = User.create(:name => "George Bluth Sr.", :email => 'admin@admin.com', :password => 'admin', :admin =>  true)
         visit '/'
         click_on 'Sign in'
         fill_in :email, with: 'admin@admin.com'
@@ -13,8 +12,7 @@ describe 'the sign in for an admin account process' do
     end
     
     it "gives an error when account parameters aren't entered or entered accurately" do
-        superuser = FactoryBot.create(:admin)
-        superuser.admin = true
+        admin = User.create(:name => "George Bluth Sr.", :email => 'admin@admin.com', :password => 'admin', :admin =>  true)
         visit '/'
         click_on 'Sign in'
         fill_in :email, with: 'admin@admin.com'
