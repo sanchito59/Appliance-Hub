@@ -4,10 +4,7 @@ class ProductsController < ApplicationController
     # Code for listing all products
     def index
         @products = Product.all
-        if params[:search]
-            binding.pry
-            @products = Product.search(params[:search])
-        elsif params[:a_to_z]
+        if params[:a_to_z]
             @products = Product.a_to_z
         elsif params[:z_to_a]
             @products = Product.z_to_a
@@ -34,17 +31,12 @@ class ProductsController < ApplicationController
     
     # Code for creating a new product
     def create
-        if current_user.admin != true
-            redirect_to '/'
-            flash[:notice] = "You do not have permission to do that."
+        @product = Product.new(product_params)
+        if @product.save
+            flash[:notice] = "#{@product.name} was successfully added!"
+            redirect_to products_path
         else
-            @product = Product.new(product_params)
-            if @product.save
-                flash[:notice] = "#{@product.name} was successfully added!"
-                redirect_to products_path
-            else
-                render :new
-            end
+            render :new
         end
     end
     
