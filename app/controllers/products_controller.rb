@@ -59,17 +59,12 @@ class ProductsController < ApplicationController
     
     # Code for updating a product
     def update
-        if current_user.admin != true
-            redirect_to '/'
-            flash[:notice] = "You do not have permission to do that."
+        @product = Product.find(params[:id])
+        if @product.update(product_params)
+            flash[:notice] = "#{@product.name} was successfully updated!"
+            redirect_to products_path
         else
-            @product = Product.find(params[:id])
-            if @product.update(product_params)
-                flash[:notice] = "#{@product.name} was successfully updated!"
-                redirect_to products_path
-            else
-                render :edit
-            end
+            render :edit
         end
     end
     
