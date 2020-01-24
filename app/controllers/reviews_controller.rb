@@ -12,8 +12,6 @@ class ReviewsController < ApplicationController
         if @review.save
             flash[:notice] = "#{@product.name} has been reviewed!"
             redirect_to product_path(@product)
-        else
-            render :new
         end
     end
     
@@ -39,8 +37,6 @@ class ReviewsController < ApplicationController
         if @review.update(review_params)
             flash[:notice] = "#{@review.author}'s review has been updated!"
             redirect_to product_path(@review.product)
-        else
-            render :edit
         end
     end
 
