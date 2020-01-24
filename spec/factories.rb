@@ -3,7 +3,7 @@ FactoryBot.define do
     name {'Michael Bluth'}
     email {'user@user.com'}
     password {'user'}
-    admin { false}
+    admin { false }
   end
 
   factory(:product) do
