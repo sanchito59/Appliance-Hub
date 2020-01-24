@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>Appliance Hub</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,11 +10,6 @@
   </head>
 
 <body>
-<% if current_user %>
-  <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
-<% else %>
-  <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
-<% end %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="/">Appliance Hub</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +30,14 @@
     </ul>
   </div>
 </nav>
+
+<div id="login-nav">
+  <% if current_user %>
+    <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
+  <% else %>
+    <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+  <% end %>
+</div>
 
   <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: "alert alert-success", role: "alert" %>

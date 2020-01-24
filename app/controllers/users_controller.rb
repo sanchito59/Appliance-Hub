@@ -7,8 +7,12 @@ class UsersController < ApplicationController
     def create
       @user = User.new(user_params)
       if @user.save
-        flash[:notice] = "You've successfully signed up!"
         session[:user_id] = @user.id
+        if current_user.admin === true
+          flash[:notice] = "Welcome, Admin"
+        else
+          flash[:notice] = "You've successfully signed up!"
+        end
         redirect_to "/"
       else
         flash[:alert] = "There was a problem signing up."
@@ -19,6 +23,6 @@ class UsersController < ApplicationController
     private
   
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
     end
   end
