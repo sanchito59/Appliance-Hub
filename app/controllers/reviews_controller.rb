@@ -35,17 +35,12 @@ class ReviewsController < ApplicationController
     end
     
     def update
-        if current_user.admin != true
-            redirect_to '/'
-            flash[:notice] = "You do not have permission to do that."
+        @review = Review.find(params[:id])
+        if @review.update(review_params)
+            flash[:notice] = "#{@review.author}'s review has been updated!"
+            redirect_to product_path(@review.product)
         else
-            @review = Review.find(params[:id])
-            if @review.update(review_params)
-                flash[:notice] = "#{@review.author}'s review has been updated!"
-                redirect_to product_path(@review.product)
-            else
-                render :edit
-            end
+            render :edit
         end
     end
 
