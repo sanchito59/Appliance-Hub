@@ -16,12 +16,12 @@ Products are checked for correct entry of information when submitted to the data
 
 #### Zip:
 
-1. Click [here](https://github.com/sanchito59/appliance_hub.git) to go to the repository location where you will find the clone/download menu.
+1. Click [here](https://github.com/sanchito59/rails_5.2.4.1_appliance_hub.git) to go to the repository location where you will find the clone/download menu.
 
  2. Navigate to the directory (folder) that contains your browser's downloads.
  3. Double-click on **Appliance Hub** directory (folder).
  4. Open directory contents by extracting/unzipping documents from folder.
- 3. Make sure your system has `Ruby 2.6.5`, `Rails 6` or higher, and `NPM` installed.
+ 3. Make sure your system has `Ruby 2.6.5`, `Rails 5.2.4.1` or higher, and `NPM` installed.
  4. With your tools installed, and within the folder, run `bundle install`. Make sure all gems install correctly before moving on.
  5. Next run `rake db:create`, `rake db:migrate`, and `rake db:test:prepare`. Make sure all processes complete successfully.
  6. To seed the database with test information, run `rake db:seed`. This will fill the database with 50-125 products and 3-15 reviews for each of those products.
@@ -29,9 +29,9 @@ Products are checked for correct entry of information when submitted to the data
 
 #### Clone:
 
- 1. To clone the repository, from your terminal or command line enter: "git clone https://github.com/sanchito59/appliance_hub"
+ 1. To clone the repository, from your terminal or command line enter: "git clone https://github.com/sanchito59/rails_5.2.4.1_appliance_hub.git"
  2. Once the repository finishes downloading you will need to navigate to it in the terminal/command line.
- 3. Make sure your system has `Ruby 2.6.5`, `Rails 6` or higher, and `NPM` installed.
+ 3. Make sure your system has `Ruby 2.6.5`, `Rails 5.2.4.1` or higher, and `NPM` installed.
  4. With your tools installed, and within the folder, run `bundle install`. Make sure all gems install correctly before moving on.
  5. Next run `rake db:create`, `rake db:migrate`, and `rake db:test:prepare`. Make sure all processes complete successfully.
  6. To seed the database with test information, run `rake db:seed`. This will fill the database with 50-125 products and 3-15 reviews for each of those products.
@@ -56,7 +56,7 @@ Products are checked for correct entry of information when submitted to the data
 ### Technologies Used
 
  - Ruby 2.6.5
- - Rails 6.0.2.1
+ - Rails 5.2.4.1
  - PostgreSQL 12.1
  - Database Seeding
  - Database Querying
