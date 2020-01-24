@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         if current_user.admin === true
-          flash[:notice] = "Welcome, Admin"
+          flash[:notice] = "Welcome, Admin."
         else
           flash[:notice] = "You've successfully signed up!"
         end
