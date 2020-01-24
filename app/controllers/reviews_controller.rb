@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+    # before_action :authorize, only: [:]
+
     def new
         @product = Product.find(params[:product_id])
         @review = @product.reviews.new 
@@ -22,26 +24,41 @@ class ReviewsController < ApplicationController
     end
     
     def edit
-        @product = Product.find(params[:product_id])
-        @review = Review.find(params[:id])
-        render :edit
+        if current_user.admin != true
+            redirect_to '/'
+            flash[:notice] = "You do not have permission to do that."
+        else
+            @product = Product.find(params[:product_id])
+            @review = Review.find(params[:id])
+            render :edit
+        end
     end
     
     def update
-        @review = Review.find(params[:id])
-        if @review.update(review_params)
-          flash[:notice] = "#{@review.author}'s review has been updated!"
-          redirect_to product_path(@review.product)
+        if current_user.admin != true
+            redirect_to '/'
+            flash[:notice] = "You do not have permission to do that."
         else
-          render :edit
+            @review = Review.find(params[:id])
+            if @review.update(review_params)
+                flash[:notice] = "#{@review.author}'s review has been updated!"
+                redirect_to product_path(@review.product)
+            else
+                render :edit
+            end
         end
     end
 
     def destroy
-        @review = Review.find(params[:id])
-        @review.destroy
-        flash[:notice] = "Review successfully removed."
-        redirect_to product_path(@review.product)
+        if current_user.admin != true
+            redirect_to '/'
+            flash[:notice] = "You do not have permission to do that."
+        else
+            @review = Review.find(params[:id])
+            @review.destroy
+            flash[:notice] = "Review successfully removed."
+            redirect_to product_path(@review.product)
+        end
     end
     
     private
