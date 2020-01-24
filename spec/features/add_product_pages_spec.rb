@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "the add a product process" do
     it "adds a new product" do
+      # admin = FactoryBot.create(:admin)
       visit products_path
       click_link 'Create new product'
       fill_in 'Name', :with => '1960 First Press Giant Steps vinyl'
