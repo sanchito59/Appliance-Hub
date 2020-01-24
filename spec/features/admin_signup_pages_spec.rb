@@ -13,7 +13,7 @@ describe 'the sign up for an admin account process' do
         expect(page).to have_content 'Welcome, Admin.'
     end
 
-    it "gives an error when account parameters aren't entered or entered accurately" do
+    it "flashes an error when account parameters aren't entered or entered accurately" do
         visit '/'
         click_on 'Sign up'
         fill_in 'user[name]', with: 'admin'
