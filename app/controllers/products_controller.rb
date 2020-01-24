@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-    before_action :authorize, only: [:index]
+    before_action :authorize, only: [:index, :new]
 
     # Code for listing all products
     def index
