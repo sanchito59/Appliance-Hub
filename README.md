@@ -62,6 +62,7 @@ Products are checked for correct entry of information when submitted to the data
  - Database Querying
  - Behavior Driven Development / User Stories
  - Testing for Behavior and Integration
+ - **100% coverage across 744 lines of code- 45 passing tests**
 
 - - - -
 ### Support and Contact
