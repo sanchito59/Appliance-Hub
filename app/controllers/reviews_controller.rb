@@ -12,6 +12,9 @@ class ReviewsController < ApplicationController
         if @review.save
             flash[:notice] = "#{@product.name} has been reviewed!"
             redirect_to product_path(@product)
+        else
+            flash[:alert] = "Something went wrong."
+            render :new
         end
     end
     
@@ -36,6 +39,9 @@ class ReviewsController < ApplicationController
         @review = Review.find(params[:id])
         if @review.update(review_params)
             flash[:notice] = "#{@review.author}'s review has been updated!"
+            redirect_to product_path(@review.product)
+        else
+            flash[:alert] = "Something went wrong."
             redirect_to product_path(@review.product)
         end
     end
