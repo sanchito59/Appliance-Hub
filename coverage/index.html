@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-24T16:18:15-08:00">2020-01-24T16:18:15-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-24T16:31:33-08:00">2020-01-24T16:31:33-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.0
+         4.13
        </span>
     </span> hits/line)
   </h2>
@@ -77,7 +77,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>79.6</td>
+        <td>88.9</td>
       </tr>
       
       <tr>
@@ -766,14 +766,14 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="414" data-linenumber="6">
-          <span class="hits">414</span>
+        <li class="covered" data-hits="445" data-linenumber="6">
+          <span class="hits">445</span>
           
           <code class="ruby">    if session[:user_id]</code>
         </li>
       
-        <li class="covered" data-hits="329" data-linenumber="7">
-          <span class="hits">329</span>
+        <li class="covered" data-hits="360" data-linenumber="7">
+          <span class="hits">360</span>
           
           <code class="ruby">      @current_user ||= User.find(session[:user_id])</code>
         </li>
@@ -796,8 +796,8 @@
           <code class="ruby">  def authorize</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="11">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="77" data-linenumber="11">
+          <span class="hits">77</span>
           
           <code class="ruby">    if !current_user</code>
         </li>
@@ -860,7 +860,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">    before_action :authorize, only: [:index, :new]</code>
+          <code class="ruby">    before_action :authorize, only: [:index, :new, :show]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
