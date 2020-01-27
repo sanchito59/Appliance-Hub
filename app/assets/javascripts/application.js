@@ -18,8 +18,8 @@
 //= require popper
 //= require bootstrap-sprockets
 $(document).ready(function() {
-    const slider = document.getElementById("slider");
-    const output = document.getElementById("range-value");
+    var slider = document.getElementById("slider");
+    var output = document.getElementById("range-value");
     output.innerHTML = slider.value; // Display the default slider value
     // Update the current slider value (each time you drag the slider handle)
     slider.oninput = function() {
