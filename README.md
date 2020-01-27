@@ -3,7 +3,7 @@
 ## By **Chris Sanchez**
 
 
-[Appliance Hub](https://glacial-crag-70163.herokuapp.com/) is a CRUD (Create, Read, Update, Delete) application built for companies to hold product information in a database, assuring information is properly saved through use of callbacks and validation. Appliance Hub features account authorization with password encryption so that users and administrators can securely sign up and login to use the app. Users and administrators have different CRUD permissions, allowing administrators the ability to create, read, update, or delete any content, but with restricted functionality for non-administrative users.
+[Appliance Hub](https://blooming-fortress-25155.herokuapp.com/) is a CRUD (Create, Read, Update, Delete) application built for companies to hold product information in a database, assuring information is properly saved through use of callbacks and validation. Appliance Hub features account authorization with password encryption so that users and administrators can securely sign up and login to use the app. Users and administrators have different CRUD permissions, allowing administrators the ability to create, read, update, or delete any content, but with restricted functionality for non-administrative users.
 
 Products are checked for correct entry of information when submitted to the database so that products never have a detail missing. Products also have reviews properly stored and associated with them in the database, with all columns of information entered for a product. The product makes use of Ruby/Rails as well as ES6 Javascript, SCSS, and Rspec testing for methods and integration.
 
@@ -26,7 +26,7 @@ Products are checked for correct entry of information when submitted to the data
  4. With your tools installed, and within the folder, run `bundle install`. Make sure all gems install correctly before moving on.
  5. Next run `rake db:create`, `rake db:migrate`, and `rake db:test:prepare`. Make sure all processes complete successfully.
  6. To seed the database with test information, run `rake db:seed`. This will fill the database with 50-125 products and 3-15 reviews for each of those products.
- 7. Finally, run `rails s` or `rails server` and navigate to `localhost:3000` to use [**Appliance Hub**](https://glacial-crag-70163.herokuapp.com/).
+ 7. Finally, run `rails s` or `rails server` and navigate to `localhost:3000` to use [**Appliance Hub**](https://blooming-fortress-25155.herokuapp.com/).
 
 #### Clone:
 
@@ -36,7 +36,7 @@ Products are checked for correct entry of information when submitted to the data
  4. With your tools installed, and within the folder, run `bundle install`. Make sure all gems install correctly before moving on.
  5. Next run `rake db:create`, `rake db:migrate`, and `rake db:test:prepare`. Make sure all processes complete successfully.
  6. To seed the database with test information, run `rake db:seed`. This will fill the database with 50-125 products and 3-15 reviews for each of those products.
- 7. Finally, run `rails s` or `rails server` and navigate to `localhost:3000` to use [**Appliance Hub**](https://glacial-crag-70163.herokuapp.com/).
+ 7. Finally, run `rails s` or `rails server` and navigate to `localhost:3000` to use [**Appliance Hub**](https://blooming-fortress-25155.herokuapp.com/).
 
 - - - -
 
@@ -68,7 +68,7 @@ Products are checked for correct entry of information when submitted to the data
 - - - -
 ### Support and Contact
 
-If you run into any issues running [**Appliance Hub**](https://glacial-crag-70163.herokuapp.com/), please contact **Chris Sanchez**.
+If you run into any issues running [**Appliance Hub**](https://blooming-fortress-25155.herokuapp.com/), please contact **Chris Sanchez**.
 
 ### License
 
